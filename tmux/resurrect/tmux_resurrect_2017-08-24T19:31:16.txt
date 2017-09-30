@@ -1,0 +1,5 @@
+pane	0	0	:[tmux]	1	:*	0	:/Users/Y13	0	htop	:htop
+pane	0	0	:[tmux]	1	:*	1	:/Users/Y13	1	bash	:
+pane	0	0	:[tmux]	1	:*	2	:/Users/Y13	0	bash	:
+window	0	0	1	:*	69b7,204x62,0,0[204x8,0,0,0,204x53,0,9{102x53,0,9,1,101x53,103,9,2}]
+state	0	

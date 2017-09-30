@@ -1,0 +1,4 @@
+pane	0	0	:bash	1	:*	0	:/Users/Y13	0	htop	:htop
+pane	0	0	:bash	1	:*	1	:/Users/Y13	1	bash	:
+window	0	0	1	:*	27be,204x62,0,0[204x8,0,0,0,204x53,0,9,1]
+state	0	
