@@ -2,6 +2,8 @@
 cp ./tmux.conf ~/.tmux.conf
 cp -r ./tmux ~/.tmux
 cp ./vimrc ~/.vimrc
+# i3 config install
+# cp ./i3config ~/.config/i3/config
 
 # Sourcing tmux file, in case tmux is running
 tmux source-file ~/.tmux.conf
