@@ -88,6 +88,17 @@ set wildmenu
 " Display @@@ when the last line is truncated
 set display=truncate
 
+
+" ----------------------- HOTKEY REMAPS ---------------------
+"
+"  Keyboard shortcuts meant to make the use of vim features easier
+
+" Switch to next buffer
+map <Tab> :bn<CR>
+
+" Switch to previous buffer
+map <S-Tab> :bp<CR>
+
 " ----------------------- PLUGIN CONFIGS --------------------
 
 " -x-x-x- NERDTree Config -x-x-x-
@@ -101,6 +112,13 @@ autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
+
+" -x-x-x- Airline Config -x-x-x-
+
+let g:airline_section_b = "%{FugitiveStatusline()}"
+
+" -x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-
+
 
 
 
