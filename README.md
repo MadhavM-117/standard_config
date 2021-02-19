@@ -14,6 +14,7 @@ Here's the list of the best things in my environment:
 - [neovim](https://neovim.io/)
 - [tmux](https://github.com/tmux/tmux/wiki)
 - [vscode](https://code.visualstudio.com/)
+- [zsh+ohmyzsh](https://ohmyz.sh/)
 
 A couple of other things that make it what it is: 
 - [JetBrains Mono (Font)](https://www.jetbrains.com/lp/mono/)

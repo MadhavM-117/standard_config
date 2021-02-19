@@ -1,9 +1,0 @@
-pane	litchi	0	:bash	1	:*	0	:/Users/Y13/vimana/litchi-drone-path	0	htop	:htop
-pane	litchi	0	:bash	1	:*	1	:/Users/Y13/vimana/litchi-drone-path	1	bash	:
-pane	litchi	0	:bash	1	:*	2	:/Users/Y13/vimana/litchi-drone-path	0	bash	:
-pane	photoscan	0	:bash	1	:*	0	:/Users/Y13/vimana/photoscan	0	htop	:htop
-pane	photoscan	0	:bash	1	:*	1	:/Users/Y13/vimana/photoscan/vimana-photoscan-automation	1	bash	:
-pane	photoscan	0	:bash	1	:*	2	:/Users/Y13	0	bash	:
-window	litchi	0	1	:*	bf5d,204x62,0,0[204x8,0,0,17,204x53,0,9{102x53,0,9,19,101x53,103,9,20}]
-window	photoscan	0	1	:*	bc2e,204x62,0,0[204x8,0,0,8,204x53,0,9{102x53,0,9,10,101x53,103,9,13}]
-state	litchi	

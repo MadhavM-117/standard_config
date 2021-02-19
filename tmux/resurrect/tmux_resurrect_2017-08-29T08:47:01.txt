@@ -1,3 +1,0 @@
-pane	0	0	:bash	1	:*	0	:/Users/Y13	1	bash	:
-window	0	0	1	:*	b89d,204x62,0,0,0
-state	0	

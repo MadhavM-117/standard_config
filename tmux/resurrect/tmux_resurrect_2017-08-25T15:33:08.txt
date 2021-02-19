@@ -1,6 +1,0 @@
-pane	0	0	:[tmux]	0	:-	0	:/Users/Y13	1	bash	:
-pane	0	1	:bash	1	:*	0	:/Users/Y13	0	bash	:
-pane	0	1	:bash	1	:*	1	:/Users/Y13	1	bash	:
-window	0	0	0	:-	ae5d,80x23,0,0,0
-window	0	1	1	:*	1196,80x23,0,0[80x11,0,0,1,80x11,0,12,2]
-state	0	
