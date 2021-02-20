@@ -1,0 +1,6 @@
+" Exit insert mode w/o hitting escape
+:imap jk <Esc>
+:imap jj <Esc>
+:set guicursor=
+:set tabstop=2 shiftwidth=2
+
