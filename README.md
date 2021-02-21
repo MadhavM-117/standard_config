@@ -18,6 +18,9 @@ Here's the list of the best things in my environment:
 
 A couple of other things that make it what it is: 
 - [JetBrains Mono (Font)](https://www.jetbrains.com/lp/mono/)
+- [Powerline (Font)](https://github.com/powerline/fonts)
+- [Font Awesome (Font)](https://fontawesome.com/)
+  - [Ubuntu Package](https://launchpad.net/ubuntu/groovy/+package/fonts-font-awesome)
 
 ... that's all for now, but this list is still a work in progress, and I'll update it 
 as I go. 
