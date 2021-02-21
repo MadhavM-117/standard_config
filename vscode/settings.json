@@ -1,0 +1,12 @@
+{
+    "vscode-neovim.neovimExecutablePaths.linux": "/home/y13/common/neovim/nightly-0.5.0/nvim-linux64/bin/nvim",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.languageServer": "Microsoft"
+}

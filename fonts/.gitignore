@@ -1,0 +1,3 @@
+# Ensure that none of the font files get accidentally checked in
+*.zip
+fonts/
