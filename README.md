@@ -25,10 +25,45 @@ A couple of other things that make it what it is:
 ... that's all for now, but this list is still a work in progress, and I'll update it 
 as I go. 
 
+## Working with the configs
+
+### Install Configs
+
+Provided you have all the necessary software installed, you can install the configs 
+in the repository to the required locations by running: 
+
+```sh
+make install
+```
+
+If you only want to update the config for a particular subset, you can go to the relevant 
+directory and run the same command. 
+
+```sh
+cd {subset}
+make install
+```
+
+### Update Configs
+
+If you want to update the configs in the repository, with the ones currently being used in a machine, 
+you can run: 
+
+```sh
+make update
+```
+
+Like the earlier scenario, you can also update it, per subset, if required with the following approach: 
+
+```sh
+cd {subset}
+make update
+```
+
 ## Pre-requisites
 
 There are a couple installation things I didn't cover, which I will get around to 
-simplifying eventually, but until I'll list them below, for the sake of completeness. 
+simplifying eventually, but until then, I'll list them below for the sake of completeness. 
 
 ### Basic Installs
 
