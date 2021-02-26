@@ -3,6 +3,9 @@
 # vim -> nvim
 alias vim="nvim"
 
+# use vim as file reader
+alias read="vim -M"
+
 # Tmux
 alias tat="tmux a -t"
 alias tns="tmux new -s"
