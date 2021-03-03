@@ -6,6 +6,8 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'junegunn/fzf'
 	Plug 'ervandew/supertab'
 	Plug 'deoplete-plugins/deoplete-jedi'
+	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Ensure python path is preserved through environment
@@ -54,3 +56,10 @@ nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> <F2> <Plug>(lcn-rename)
 
 " </language-client> ---------------
+source ~/.config/nvim/defx.vim
+
+" <defx> -----------------------
+" Defx is what we'll use as a file explorer
+
+
+
