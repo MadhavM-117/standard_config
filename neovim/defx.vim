@@ -2,6 +2,7 @@
 
 " Open Defx in the right hand side
 nnoremap <leader>f :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft<CR>
+nnoremap <leader>b :<C-u>Denite buffer<CR>
 
 function! s:open_defx_if_directory()
   " This throws an error if the buffer name contains unusual characters like
