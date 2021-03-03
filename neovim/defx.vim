@@ -24,13 +24,13 @@ endfunction
 	function! s:defx_my_settings() abort
 	  " Define mappings
 	  nnoremap <silent><buffer><expr> <CR>
-	  \ defx#do_action('open')
+	  \ defx#do_action('drop')
 "	  nnoremap <silent><buffer><expr> c
 "	  \ defx#do_action('copy')
 "	  nnoremap <silent><buffer><expr> m
 "	  \ defx#do_action('move')
 "	  nnoremap <silent><buffer><expr> p
-	  \ defx#do_action('paste')
+"	  \ defx#do_action('paste')
 	  nnoremap <silent><buffer><expr> l
 	  \ defx#do_action('open')
 	  nnoremap <silent><buffer><expr> E
