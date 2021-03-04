@@ -4,3 +4,8 @@
 :set guicursor=
 :set tabstop=2 shiftwidth=2
 
+" Ensure splitting happens to the right and bottom
+:set splitright
+:set splitbelow 
+
+

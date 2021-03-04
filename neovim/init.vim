@@ -4,3 +4,6 @@ source ~/.vimrc
 " Plug-in configurations
 source ~/.config/nvim/plugins.vim
 
+" Terminal configs
+source ~/.config/nvim/terminal.vim
+

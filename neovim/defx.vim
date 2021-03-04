@@ -1,8 +1,9 @@
 " Keyboard shortcuts"
 
 " Open Defx in the right hand side
-nnoremap <leader>f :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft<CR>
-nnoremap <leader>b :<C-u>Denite buffer<CR>
+nnoremap <leader>f :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft -listed -resume<CR>
+nnoremap <leader>b :<C-u>Denite buffer -auto-resize<CR>
+nnoremap <leader>t :<C-u>12split term://zsh<CR>
 
 function! s:open_defx_if_directory()
   " This throws an error if the buffer name contains unusual characters like
@@ -85,6 +86,12 @@ endfunction
 	  \ defx#do_action('print')
 	  nnoremap <silent><buffer><expr> cd
 	  \ defx#do_action('change_vim_cwd')
+		nnoremap <silent><buffer><expr> > 
+		\ defx#do_action('resize',
+		\ defx#get_context().winwidth + 2)
+		nnoremap <silent><buffer><expr> < 
+		\ defx#do_action('resize',
+		\ defx#get_context().winwidth - 2)
 	endfunction
 
 " Defx Actions End -----------
