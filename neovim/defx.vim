@@ -1,10 +1,4 @@
-" Keyboard shortcuts"
-
-" Open Defx in the right hand side
-nnoremap <leader>f :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft -listed -resume<CR>
-nnoremap <leader>b :<C-u>Denite buffer -auto-resize<CR>
-nnoremap <leader>t :<C-u>12split term://zsh<CR>
-
+" Logic to use Defx to read a directory, instead of netrw
 function! s:open_defx_if_directory()
   " This throws an error if the buffer name contains unusual characters like
   " [[buffergator]]. Desired behavior in those scenarios is to consider the
@@ -21,6 +15,7 @@ function! s:open_defx_if_directory()
     execute "Defx `expand('%:p')` | bd " . expand('%:r')
   endif
 endfunction
+" End of Defx-netrw logic -------------------- 
 
 " Defx Actions
 	function! s:defx_my_settings() abort

@@ -3,6 +3,9 @@
 # vim -> nvim
 alias vim="nvim"
 
+# Open the file in IDE mode
+alias edit="vim +IDE"
+
 # use vim as file reader
 alias read="vim -M"
 
