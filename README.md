@@ -72,7 +72,7 @@ The basic requirements which can be installed through `apt` are expressed in the
 ```sh
 sudo apt-get install -y \
 		neovim build-essential software-properties-common python3 vim  apt-transport-https \
-		i3 dunst blueman zsh libdbus-1-dev ssl-dev
+		i3 dunst blueman zsh libdbus-1-dev libssl-dev rofi
 ```
 
 ### NVM (Node Version Manager)
