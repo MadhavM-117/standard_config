@@ -5,6 +5,7 @@ default:
 update:
 		@cp -r ~/.config/i3/config.d ~/.config/i3/i3-status.toml ./
 		@cp ~/.config/dunst/dunstrc ./dunstrc
+		@cp ~/.config/i3/rofi.conf ./rofi.conf
 		@echo "Updated config files present in the repo."
 
 install:
@@ -12,6 +13,7 @@ install:
 		@cp -r ./config.d ~/.config/i3/
 		@cat ~/.config/i3/config.d/* > ~/.config/i3/config
 		@cp ./dunstrc ~/.config/dunst/dunstrc 
+		@cp ./rofi.conf ~/.config/i3/rofi.conf
 		@i3 reload
 		@echo "Installed i3 config files, and restarted i3"
 
