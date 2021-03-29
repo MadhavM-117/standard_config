@@ -17,3 +17,7 @@ install:
 		@$(MAKE) -C ./zsh install
 
 
+install-st:
+	@$(MAKE) -C ./st clean install
+
+
