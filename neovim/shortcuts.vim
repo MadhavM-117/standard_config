@@ -1,13 +1,16 @@
 " Keyboard shortcuts"
 
 " Open Defx in the right hand side
-nnoremap <leader>f :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft -listed -resume<CR>
+nnoremap <leader>d :<C-u>Defx -split=vertical -winwidth=50 -direction=topleft -listed -resume<CR>
 
 " List the available buffers to switch between in the current window
 nnoremap <leader>b :<C-u>Denite buffer -auto-resize<CR>
 
+" List the files present in the current directory, recursively, and allow for search
+nnoremap <leader>f :<C-u>Denite file/rec -auto-resize<CR>
+
 " Open terminal at the bottom of the current window
-nnoremap <leader>t :<C-u>12split term://zsh<CR>
+nnoremap <leader>t :<C-u>6split term://zsh<CR>
 
 
 " Command shortcuts 

@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'deoplete-plugins/deoplete-jedi'
 	Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Ensure python path is preserved through environment
@@ -25,18 +26,6 @@ call deoplete#custom#source('_', 'max_menu_width', 80)
 " inoremap <expr><tab> pumvisible() ? "\<c-p>" : "\<tab>"
 
 " </deoplete> -------
-
-" <omnifuncs> ------
-augroup omnifuncs
-  autocmd!
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-augroup end
-
-" </omnifuncs> ---------
 
 " <language-client> ---------
 
