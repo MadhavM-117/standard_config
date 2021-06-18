@@ -1,7 +1,7 @@
 icons = "awesome"
 
 [theme]
-name = "solarized-dark"
+name = "space-villain"
 [theme.overrides]
 separator = ""
 
