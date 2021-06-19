@@ -1,5 +1,9 @@
-theme = "solarized-dark"
 icons = "awesome"
+
+[theme]
+name = "space-villain"
+[theme.overrides]
+separator = ""
 
 # [[block]]
 # block = "disk_space"
