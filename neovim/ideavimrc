@@ -1,0 +1,11 @@
+source ~/.vimrc
+
+set showmode
+set incsearch
+set nu
+
+command! Open action GotoFile
+
+map <leader>f <Action>(GotoFile)
+map <leader>s <Action>(GotoSymbol)
+map <leader>t <Action>(ActivateTerminalToolWindow)
