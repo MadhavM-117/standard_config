@@ -1,7 +1,7 @@
-icons = "awesome"
+icons = "/home/y13/common/i3status-rust/files/icons/awesome.toml"
 
 [theme]
-name = "space-villain"
+name = "/home/y13/common/i3status-rust/files/themes/space-villain.toml"
 [theme.overrides]
 separator = ""
 
@@ -19,8 +19,8 @@ separator = ""
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_total_used_percents}"
+format_swap = "{swap_used_percents}"
 
 [[block]]
 block = "cpu"
