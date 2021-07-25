@@ -9,6 +9,7 @@ update-laptop:
 		@echo "Updated config files for laptop present in the repo."
 
 install-laptop:
+		@mkdir -p ~/.config/i3
 		@cp ./laptop/i3-status.toml ~/.config/i3/
 		@cp -r ./laptop/config.d ~/.config/i3/
 		@cat ~/.config/i3/config.d/* > ~/.config/i3/config
@@ -24,9 +25,11 @@ update-desktop:
 		@echo "Updated config files for desktop present in the repo."
 
 install-desktop:
+		@mkdir -p ~/.config/i3
 		@cp ./desktop/i3-status.toml ~/.config/i3/
 		@cp -r ./desktop/config.d ~/.config/i3/
 		@cat ~/.config/i3/config.d/* > ~/.config/i3/config
+		@mkdir -p ~/.config/dunst
 		@cp ./desktop/dunstrc ~/.config/dunst/dunstrc 
 		@cp ./desktop/rofi.conf ~/.config/i3/rofi.conf
 		@i3 reload

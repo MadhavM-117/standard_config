@@ -7,6 +7,7 @@ update:
 		@echo "Updated config files present in the repo."
 
 install:
+		@mkdir -p ~/.config/Code/User
 		@cp ./*.json ~/.config/Code/User/
 		@echo "Installed vs-code config files"
 

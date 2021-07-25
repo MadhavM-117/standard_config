@@ -11,6 +11,7 @@ update:
 install:
 		@cp ./vimrc ~/.vimrc
 		@cp ./ideavimrc ~/.ideavimrc
+		@mkdir -p ~/.config/nvim
 		@cp ./*.vim ~/.config/nvim/
 		@[ ! -d "$HOME/.config/nvim/plugged" ] && \
 			mkdir ~/.config/nvim/plugged && \
