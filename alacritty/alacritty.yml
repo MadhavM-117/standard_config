@@ -1,0 +1,53 @@
+env:
+  TERM: xterm-256color
+
+window:
+  title: Terminal
+  history: 10000
+
+font:
+  normal:
+    family: JetBrainsMono
+
+  size: 10.0
+
+
+colors:
+  primary:
+    background: '#080c14'
+    foreground: '#ffffff'
+
+  cursor:
+    text:       CellBackground
+    cursor:     '#ffffff' # syntax-cursor-color
+
+  selection:
+    text:       CellForeground
+    background: '#4e5451' # syntax-selection-color
+    foreground: '#000000'
+
+  normal:
+    black:      '#5c6370' # mono-3
+    red:        '#ff0000' # red 1
+    green:      '#00ff00'
+    yellow:     '#e5c07b' # orange 2
+    blue:       '#116fff'
+    magenta:    '#c678dd'
+    cyan:       '#96f6f2'
+    white:      '#828997' # mono-2
+
+  dim:
+    black:      '#5c6370' # mono-3
+    red:        '#e06c75' # red 1
+    green:      '#98c379'
+    yellow:     '#e5c07b' # orange 2
+    blue:       '#0000ff'
+    magenta:    '#c678dd'
+    cyan:       '#0000ff'
+    white:      '#828997' # mono-2
+
+background_opacity: 0.95
+
+cursor:
+  style:
+    blinking: On
