@@ -1,7 +1,7 @@
-icons = "/home/y13/common/i3status-rust/files/icons/awesome.toml"
+icons = "/home/y13/.software/i3status-rust/files/icons/awesome.toml"
 
 [theme]
-name = "/home/y13/common/i3status-rust/files/themes/space-villain.toml"
+name = "/home/y13/.software/i3status-rust/files/themes/space-villain.toml"
 [theme.overrides]
 separator = ""
 
