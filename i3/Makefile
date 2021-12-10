@@ -16,7 +16,7 @@ install-laptop:
 		@cat ~/.config/i3/config.d/* > ~/.config/i3/config
 		@cp ./laptop/dunstrc ~/.config/dunst/dunstrc 
 		@cp ./laptop/rofi.conf ~/.config/i3/rofi.conf
-		@cp ./laptop/rofi-theme.rasi ~/.config/rofi-theme.rasi
+		@cp ./laptop/rofi-theme.rasi ~/.config/i3/rofi-theme.rasi
 		@i3 reload
 		@echo "Installed i3 config files, and restarted i3"
 

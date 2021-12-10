@@ -1,3 +1,5 @@
+set -e
+
 # Basic tools to enable later installs
 sudo apt update -y 
 sudo apt upgrade -y 
@@ -10,7 +12,7 @@ sudo apt install git
 
 sudo apt-get install -y \
 	neovim build-essential software-properties-common python3 vim \
-	apt-transport-https i3 dunst blueman zsh libdbus-1-dev \ 
+	apt-transport-https i3 dunst blueman zsh libdbus-1-dev \
 	libssl-dev rofi curl
 
 # Install NVM
@@ -24,7 +26,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source ~/.cargo/env
 rustup install nightly
 
-mkdir ~/.local/bin
+mkdir -p ~/.local/bin
 echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
 
 # Install i3status-rs
