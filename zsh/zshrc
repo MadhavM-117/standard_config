@@ -103,9 +103,16 @@ export LANG=en_IN.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Spaceship ZSH
+# ZSH - Custom Completions 
 fpath=($fpath "/home/y13/.zfunctions")
+autoload -Uz compinit && compinit
 
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# Use starship as your prompt
+eval "$(starship init zsh)"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+fpath=($fpath "/home/y13/.zfunctions")
