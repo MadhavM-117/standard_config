@@ -1,35 +1,25 @@
-icons = "/home/y13/.software/i3status-rust/files/icons/awesome.toml"
+icon_format = "{icon}"
 
 [theme]
-name = "/home/y13/.software/i3status-rust/files/themes/space-villain.toml"
+theme = "/home/y13/personal/standard_config/i3status-rust/files/themes/space-villain.toml"
 [theme.overrides]
 separator = ""
 
+[icons]
+icons = "/home/y13/personal/standard_config/i3status-rust/files/icons/emoji.toml"
 
-# [[block]]
-# block = "disk_space"
-# path = "/home"
-# alias = "~/"
-# info_type = "available"
-# unit = "GB"
-# interval = 20
-# warning = 20.0
-# alert = 10.0
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_total_used_percents}"
-format_swap = "{swap_used_percents}"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "cpu"
-interval = 1
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
 
-[[block]]
-block = "load"
-interval = 1
-format = "{1m}"
 
 [[block]]
 block = "sound"
@@ -37,5 +27,10 @@ block = "sound"
 
 [[block]]
 block = "time"
-interval = 60
-format = "%a %d %B - %R"
+interval = 5
+format = " $timestamp.datetime(f:'%R %d/%m/%Y ') "
+
+[[block]]
+block = "net"
+format = " $icon $ssid"
+

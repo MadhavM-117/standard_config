@@ -19,7 +19,6 @@ sudo apt-get install -y \
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 # Configure NVM
 source ~/.bashrc
-nvm install stable && nvm use stable
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
