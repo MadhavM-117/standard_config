@@ -1,0 +1,7 @@
+theme = tokyonight
+background-opacity = 0.95
+window-decoration = false
+background = #080c14
+font-size = 10.0
+term = xterm-256color
+confirm-close-surface = false
