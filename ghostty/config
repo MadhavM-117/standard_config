@@ -1,4 +1,4 @@
-theme = tokyonight
+theme = tokyonight-storm
 background-opacity = 0.95
 window-decoration = false
 background = #080c14
