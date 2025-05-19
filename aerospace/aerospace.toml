@@ -1,0 +1,144 @@
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+
+# i3 doesn't have "normalizations" feature that why we disable them here.
+# But the feature is very helpful.
+# Normalizations eliminate all sorts of weird tree configurations that don't make sense.
+# Give normalizations a chance and enable them back.
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = ['/bin/bash', '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+]
+
+# ensure activate applications have borders
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
+
+[gaps.inner]
+    horizontal =    [{ monitor."built-in" = 5 }, 10]
+    vertical =      [{ monitor."built-in" = 5 }, 10]
+
+[gaps.outer]
+    top =       [{ monitor."built-in" = 12 }, 50]
+    bottom =    [{ monitor."built-in" = 5 }, 10]
+    left =      [{ monitor."built-in" = 5 }, 10]
+    right =     [{ monitor."built-in" = 7 }, 10]
+
+[mode.main.binding]
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+    cmd-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
+    cmd-b = 'exec-and-forget open -n /Applications/Zen.app' 
+
+    # i3 wraps focus by default
+    alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+    alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+    alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+    alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # Consider using 'join-with' command as a 'split' replacement if you want to enable
+    # normalizations
+    alt-a = 'split horizontal'
+    alt-v = 'split vertical'
+
+    alt-f = 'fullscreen'
+
+    alt-s = 'layout v_accordion' # 'layout stacking' in i3
+    alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+    alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+    cmd-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+    # Not supported, because this command is redundant in AeroSpace mental model.
+    # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
+    #alt-space = 'focus toggle_tiling_floating'
+
+    # `focus parent`/`focus child` are not yet supported, and it's not clear whether they
+    # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
+    # alt-a = 'focus parent'
+
+    cmd-1 = 'workspace 1'
+    cmd-2 = 'workspace 2'
+    cmd-3 = 'workspace 3'
+    cmd-4 = 'workspace 4'
+    cmd-5 = 'workspace 5'
+    cmd-6 = 'workspace 6'
+    cmd-7 = 'workspace 7'
+    cmd-8 = 'workspace 8'
+    cmd-9 = 'workspace 9'
+    cmd-0 = 'workspace S'
+
+    # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    # Using an array makes it possible to run multiple commands
+    # This way we can also trigger a custom sketchybar event to handle the change
+    cmd-shift-1 = ['move-node-to-workspace 1', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=1 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-2 = ['move-node-to-workspace 2', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=2 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-3 = ['move-node-to-workspace 3', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=3 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-4 = ['move-node-to-workspace 4', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=4 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-5 = ['move-node-to-workspace 5', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=5 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-6 = ['move-node-to-workspace 6', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=6 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-7 = ['move-node-to-workspace 7', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=7 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-8 = ['move-node-to-workspace 8', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=8 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-9 = ['move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=9 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+    cmd-shift-0 = ['move-node-to-workspace S', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=S FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
+
+    alt-shift-n = [
+        'move-workspace-to-monitor left', 
+        'exec-and-forget sketchybar --trigger change-workspace-monitor TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") TARGET_WORKSPACE=$(aerospace list-workspaces --focused)'
+    ]
+    alt-shift-m = [
+        'move-workspace-to-monitor right', 
+        'exec-and-forget sketchybar --trigger change-workspace-monitor TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") TARGET_WORKSPACE=$(aerospace list-workspaces --focused)'
+    ]
+
+    alt-shift-c = 'reload-config' # reload aerospace
+    alt-shift-s = 'exec-and-forget sketchybar --reload' # reload sketchybar
+
+    alt-r = 'mode resize'
+
+[mode.resize.binding]
+    h = 'resize width -50'
+    j = 'resize height +50'
+    k = 'resize height -50'
+    l = 'resize width +50'
+    enter = 'mode main'
+    esc = 'mode main'
+
+[workspace-to-monitor-force-assignment]
+    1 = 'main' # browser
+    2 = 'main' # coding
+    7 = ['built-in', 'secondary'] # media
+    8 = ['u2722de', 'secondary', 'main'] # notes
+    9 = 'main' # zoom, whatsapp, meetings
+    S = ['built-in', 'secondary'] # slack
+   
+[[on-window-detected]]
+    if.app-id = 'com.tinyspeck.slackmacgap' # slack
+    run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+    if.app-id = 'us.zoom.xos' # zoom
+    run = ['layout floating', 'move-node-to-workspace 9']
+
+
+[[on-window-detected]]
+    if.app-id = 'net.whatsapp.WhatsApp' # whatsapp
+    run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+    if.app-id = 'com.google.Chrome' # chrome (for media)
+    run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+    if.app-id = 'ai.perplexity.mac'
+    run = 'layout floating'
