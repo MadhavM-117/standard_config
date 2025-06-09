@@ -115,11 +115,6 @@ after-startup-command = [
     esc = 'mode main'
 
 [workspace-to-monitor-force-assignment]
-    1 = 'main' # browser
-    2 = 'main' # coding
-    7 = ['built-in', 'secondary'] # media
-    8 = ['u2722de', 'secondary', 'main'] # notes
-    9 = 'main' # zoom, whatsapp, meetings
     S = ['built-in', 'secondary'] # slack
    
 [[on-window-detected]]
