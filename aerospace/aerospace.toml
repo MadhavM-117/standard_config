@@ -92,11 +92,11 @@ after-startup-command = [
     cmd-shift-9 = ['move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=9 FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
     cmd-shift-0 = ['move-node-to-workspace S', 'exec-and-forget sketchybar --trigger change-window-workspace TARGET_WORKSPACE=S FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)']
 
-    alt-shift-n = [
+    cmd-shift-n = [
         'move-workspace-to-monitor left', 
         'exec-and-forget sketchybar --trigger change-workspace-monitor TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") TARGET_WORKSPACE=$(aerospace list-workspaces --focused)'
     ]
-    alt-shift-m = [
+    cmd-shift-m = [
         'move-workspace-to-monitor right', 
         'exec-and-forget sketchybar --trigger change-workspace-monitor TARGET_MONITOR=$(aerospace list-monitors --focused --format "%{monitor-appkit-nsscreen-screens-id}") TARGET_WORKSPACE=$(aerospace list-workspaces --focused)'
     ]
