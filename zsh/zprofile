@@ -30,8 +30,28 @@ alias gs="git status"
 # Gcloud
 alias gcp_switch="gcloud config configurations activate"
 
+# Tmux
+tmux_connect () {
+	sesh connect "$(sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder 'Pick a sesh' --height 50 --prompt '⚡')"
+}
+alias tcn="tmux_connect"
+
 
 # ------------------------------------------------------------
+# Environment Variables
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.local/bin/:$PATH"
+
+# Secrets
+source $HOME/.zsecrets
+
+
+
+# ------------------------------------------------------------
+# Custom evals
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
