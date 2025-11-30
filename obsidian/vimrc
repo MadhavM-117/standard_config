@@ -1,0 +1,26 @@
+" A minimal vimrc. Add configs only as required. 
+
+
+" Quick escape
+imap jk <Esc>  
+
+" Navigate visual lines
+nmap j gj
+nmap k gk
+
+" Yank to system clipboard
+set clipboard=unnamed
+
+" Emulate Folding https://vimhelp.org/fold.txt.html#fold-commands
+exmap togglefold obcommand editor:toggle-fold
+nmap zo :togglefold<CR>
+nmap zc :togglefold<CR>
+nmap za :togglefold<CR>
+
+exmap unfoldall obcommand editor:unfold-all
+nmap zR :unfoldall<CR>
+
+exmap foldall obcommand editor:fold-all
+nmap zM :foldall<CR>
+
+
