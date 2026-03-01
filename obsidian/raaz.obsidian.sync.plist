@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>raaz.obsidian.sync</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/sh</string>
+        <string>-c</string>
+        <string>exec /Users/y13/.asdf/installs/nodejs/24.14.0/bin/ob sync --path ~/personal/obsidian/raaz --continuous</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/obsidian-sync.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/obsidian-sync-error.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/Users/y13/.asdf/shims:/Users/y13/.asdf/installs/nodejs/24.14.0/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+        <key>ASDF_DIR</key>
+        <string>/opt/homebrew/opt/asdf</string>
+    </dict>
+</dict>
+</plist>
