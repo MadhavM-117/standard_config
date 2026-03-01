@@ -33,7 +33,6 @@ after-startup-command = [
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
     cmd-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
-    cmd-b = 'exec-and-forget open -n /Applications/Zen.app' 
 
     # i3 wraps focus by default
     alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
