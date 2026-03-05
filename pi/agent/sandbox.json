@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "enableWeakerNestedSandbox": true,
+  "network": {
+    "allowAll": true,
+    "allowedDomains": [],
+    "deniedDomains": []
+  },
+  "filesystem": {
+    "allowRead": ["~", "/home", "/tmp", "/var/tmp", "/usr", "/opt", "/etc"],
+    "denyRead": ["~/.ssh", "~/.aws", "~/.gnupg", "~/.config/gh/hosts.yml", "~/.netrc", "~/.npmrc", "~/.zsecrets"],
+    "allowWrite": [".", "/tmp"],
+    "denyWrite": [".env", ".env.*", "*.pem", "*.key", "id_rsa", "id_ed25519", "*.pfx", "*.p12", "~/.ssh/*"]
+  },
+  "ignoreViolations": {
+    "filesystem": ["/proc", "/sys", "/dev"]
+  }
+}
