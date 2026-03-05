@@ -1,0 +1,32 @@
+# Pi Agent Gitignore
+# Personal configuration - excludes sensitive and ephemeral data
+
+# Authentication credentials - NEVER commit
+agent/auth.json
+
+# Personal settings - copy settings.json.example to settings.json to get started
+agent/settings.json
+
+# Session files - ephemeral conversation data
+agent/sessions/
+
+
+# Agent executables 
+agent/bin/
+
+# Node modules (if any extension has npm deps)
+**/node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
