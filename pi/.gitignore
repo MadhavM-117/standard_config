@@ -4,6 +4,9 @@
 # Authentication credentials - NEVER commit
 agent/auth.json
 
+# Personal settings - copy settings.json.example to settings.json to get started
+agent/settings.json
+
 # Session files - ephemeral conversation data
 agent/sessions/
 
