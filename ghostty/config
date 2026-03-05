@@ -1,7 +1,8 @@
-theme = tokyonight-storm
+theme = TokyoNight Storm 
 background-opacity = 0.95
 # window-decoration = false
 background = #080c14
 font-size = 14.0
 term = xterm-256color
 confirm-close-surface = false
+keybind = shift+enter=text:\x1b\r

@@ -112,9 +112,6 @@ after-startup-command = [
     l = 'resize width +50'
     enter = 'mode main'
     esc = 'mode main'
-
-[workspace-to-monitor-force-assignment]
-    S = ['built-in', 'secondary'] # slack
    
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap' # slack
