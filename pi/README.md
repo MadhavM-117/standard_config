@@ -1,5 +1,4 @@
 # Pi Coding Agent Configuration
-
 Personal configuration for the [pi coding agent](https://github.com/mariozechner/pi-coding-agent).
 
 ## Setup on New Device

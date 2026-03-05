@@ -163,6 +163,7 @@ function createSandboxedBashOps(): BashOperations {
 
 				child.on("error", (err) => {
 					if (timeoutHandle) clearTimeout(timeoutHandle);
+					SandboxManager.cleanupAfterCommand();
 					reject(err);
 				});
 
@@ -181,6 +182,9 @@ function createSandboxedBashOps(): BashOperations {
 				child.on("close", (code) => {
 					if (timeoutHandle) clearTimeout(timeoutHandle);
 					signal?.removeEventListener("abort", onAbort);
+
+					// Clean up bwrap mount points (ghost dotfiles) after each command
+					SandboxManager.cleanupAfterCommand();
 
 					if (signal?.aborted) {
 						reject(new Error("aborted"));
