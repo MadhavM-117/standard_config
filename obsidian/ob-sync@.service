@@ -1,0 +1,14 @@
+[Unit]
+Description=Obsidian Sync Service for %i
+After=network.target
+
+[Service]
+Type=simple
+Environment="PATH=%h/.nvm/versions/node/v24.13.1/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="HOME=%h"
+ExecStart=%h/.nvm/versions/node/v24.13.1/bin/ob sync --continuous --path %I
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target
