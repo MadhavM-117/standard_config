@@ -1,0 +1,83 @@
+/* =========================
+   Base
+   ========================= */
+* {
+    font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", monospace;
+    font-size: 15px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* =========================
+   Layout Spacing
+   ========================= */
+.modules-left {
+    margin-left: 12px;
+}
+
+.modules-right {
+    margin-right: 12px;
+}
+
+/* =========================
+   Workspaces
+   ========================= */
+#workspaces button {
+    padding: 0 5px;
+    background-color: rgba(24, 24, 37, 0.65);
+    color: #cdd6f4;
+    border-radius: 8px;
+    border: none;
+}
+
+#workspaces button:hover {
+    background: #45475a;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+/* =========================
+   Shared Module Pills
+   (active modules from config)
+   ========================= */
+#clock,
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-power,
+#window,
+#workspaces {
+    padding: 0 10px;
+    color: #cdd6f4;
+    background-color: rgba(49, 50, 68, 0.9);
+    border: 1px solid rgba(69, 71, 90, 0.9);
+    border-radius: 10px;
+    margin: 5px 5px;
+}
+
+/* =========================
+   Module Overrides
+   ========================= */
+#window {
+    font-weight: 700;
+}
