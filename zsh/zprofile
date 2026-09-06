@@ -41,6 +41,7 @@ alias tcn="tmux_connect"
 # Environment Variables
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.local/bin/:$PATH"
+export EDITOR="nvim"
 
 # Secrets
 source $HOME/.zsecrets
