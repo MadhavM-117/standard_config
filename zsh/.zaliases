@@ -1,0 +1,59 @@
+# Obsidian vault: default is the work machine's path; override per machine in .zshrc
+VAULT="${VAULT:-$HOME/obsidian/torchbox}"
+
+alias vim="nvim"
+
+# Tmux
+alias tat="tmux a -t"
+alias tls="tmux ls"
+
+# tns [name]: no name = session named after $PWD, reusing any session already started here
+tns() {
+  (( $# )) && { tmux new -s "$@"; return }
+  local name
+  case $PWD in
+    $HOME) name=home ;;
+    $VAULT) name=notes ;;
+    *) name=${PWD:t} ;;
+  esac
+  name=${name//[.:]/_}  # tmux rewrites . and : in session names
+  local existing=$(tmux ls -F $'#{session_path}\t#{session_name}' 2>/dev/null | awk -F'\t' -v d="$PWD" '$1 == d { print $2; exit }')
+  if [[ -n $existing ]]; then
+    name=$existing
+  else
+    tmux new -d -s "$name" -c "$PWD" || return
+  fi
+  if [[ -n $TMUX ]]; then tmux switch-client -t "=$name"; else tmux attach -t "=$name"; fi
+}
+
+# Git
+alias gpull="git pull -p"
+alias gcom="git commit"
+alias gpush="git stash"
+alias gpop="git stash pop"
+alias gba="git branch -a"
+alias gcb="git checkout"
+alias gcbn="git checkout -b"
+alias gs="git status"
+
+# Pi Coding Agent for Work
+alias pit="PI_CODING_AGENT_DIR=/home/y13/torchbox/.pi/agent/ pi"
+
+# Podman
+alias docker-compose="podman compose"
+
+# Notes
+notes() {
+  # bump kitty's font while editing; 0 resets to the configured size. Skipped outside kitty.
+  [[ -n $KITTY_LISTEN_ON ]] && kitten @ set-font-size +2
+  (cd $VAULT && nvim .)
+  local ret=$?
+  [[ -n $KITTY_LISTEN_ON ]] && kitten @ set-font-size 0
+  return $ret
+}
+notes-sync() {
+  git -C $VAULT add -A || return
+  # skip the commit when nothing changed, but still push anything already committed
+  git -C $VAULT diff --cached --quiet || git -C $VAULT commit -m "$(date '+%Y-%m-%d %H:%M')" || return
+  git -C $VAULT push
+}

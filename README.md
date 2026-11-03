@@ -5,12 +5,18 @@ I should have named this repo `dotfiles`, but when I created this, I didn't full
 Now that I do, I might change it, I might not. For now, I appreciate the human element behind a break in the usual pattern of things.
 
 This is where I try to keep track of all the config files I require to recreate the environment that I prefer to work in. 
-There are quite a few things, that make life tolerable as a developer, and this is my attempt to try and recreate
-their beauty each time I have to set up a new system. 
+The desktop side of things is [Omarchy](https://omarchy.org) (Hyprland + Waybar + friends); this repo only carries my **overrides** on top of Omarchy's defaults, not Omarchy itself. Anything that's identical to an Omarchy default is deliberately left out.
 
-The most recent change I've made to my linux system is switching from i3 after years to hyprland.
-It's definitely modernised a lot of my setup, but it's also made a few of my older configs not so relevant anymore.
+## Packages
 
+| Package | Contents |
+|---|---|
+| `zsh` | `~/.zshrc` + `~/.zaliases` (aliases & functions: `tns`, `notes`, `notes-sync`, git/tmux shortcuts). The Obsidian vault path (`VAULT`) is set per machine in `.zshrc`. |
+| `kitty` | `~/.config/kitty/kitty.conf` — overrides on top of Omarchy's kitty defaults |
+| `tmux` | `~/.config/tmux/tmux.conf` |
+| `hypr` | `~/.config/hypr/` — Hyprland lua config, idle/sunset/lock settings |
+| `omarchy` | `~/.config/omarchy/` — bar layout, menu extensions, custom workspace plugin, branding |
+| `obsidian` | ob-sync systemd service for syncing the Obsidian vault |
 
 ## Working with the configs
 
@@ -18,20 +24,22 @@ I'm trying out [`stow`](https://www.gnu.org/software/stow/) to help me manage do
 
 This can be installed with: 
 ```sh
-sudo apt install stow
+sudo pacman -S stow
 ```
 
-To install the configs, it should be as straightforward as: 
+To install the configs, run from the repo root: 
 ```sh
-stow <config_dir>
+stow -t ~ <config_dir>
 
 # For example, 
-# stow tmux
+# stow -t ~ tmux
 ```
 
 > [!IMPORTANT]
-> This requires this directory to be a direct child of your home directory. 
-> This is because `stow` default target directory is the parent directory of the current directory. 
+> The `-t ~` matters: this repo lives in `~/personal/`, and `stow` defaults to the parent directory of the current directory as its target. Without `-t ~` it would try to link into `~/personal/`.
+
+> [!NOTE]
+> The symlinks already on this machine were created manually in exactly the layout `stow` produces, so `stow` (v2.3+) will happily adopt or restow them.
 
 ### Tmux
 
@@ -39,4 +47,4 @@ Tmux requires Tmux plugin manager to be setup.
 
 Follow instructions here: https://github.com/tmux-plugins/tpm
 
-Then, run `stow tmux`
+Then, run `stow -t ~ tmux`
