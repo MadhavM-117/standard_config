@@ -16,7 +16,7 @@ The desktop side of things is [Omarchy](https://omarchy.org) (Hyprland + Waybar 
 | `tmux` | `~/.config/tmux/tmux.conf` |
 | `hypr` | `~/.config/hypr/` — Hyprland lua config, idle/sunset/lock settings |
 | `omarchy` | `~/.config/omarchy/` — bar layout, menu extensions, custom workspace plugin, branding |
-| `obsidian` | ob-sync systemd service for syncing the Obsidian vault |
+| `obsidian` | the vault's `.vimrc` (used by the [obsidian-vimrc-support](https://github.com/CongoCC/obsidian-vimrc-support) plugin) — install with `stow -t <vault-root> obsidian`, e.g. `stow -t ~/obsidian/personal obsidian` |
 
 ## Working with the configs
 
